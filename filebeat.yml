@@ -1,0 +1,13 @@
+filebeat.inputs:
+- type: log
+  paths:
+     - /logs/app.log
+output.elasticsearch:
+    index: "jiefang"
+    hosts: 'http://10.43.4.134:9200'
+    #username: "filebeat_internal"
+    #password: "YOUR_PASSWORD"
+setup:
+  template:
+    name: "jiefanglog"
+    pattern: "jiefanglog"
